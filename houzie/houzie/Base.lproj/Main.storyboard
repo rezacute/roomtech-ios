@@ -21,7 +21,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298" y="317"/>
+            <point key="canvasLocation" x="-110" y="669"/>
+        </scene>
+        <!--Chat Controller-->
+        <scene sceneID="ksL-zL-uKf">
+            <objects>
+                <viewController id="1iU-FH-BZS" customClass="ChatController" customModule="houzie" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iks-8Z-UNw"/>
+                        <viewControllerLayoutGuide type="bottom" id="mEi-1O-5um"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gwj-Vd-6Mr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9gg-O2-fDW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600" y="669"/>
         </scene>
     </scenes>
 </document>
