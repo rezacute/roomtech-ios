@@ -10,12 +10,14 @@ import UIKit
 
 class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
+    // MARK: View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if (isLoggedIn())
         {
-            // User is already logged in
+            toDashboard()
         }
         else
         {
@@ -30,6 +32,15 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // MARK: Segue
+    
+    func toDashboard() {
+        let chatController = self.storyboard?.instantiateViewControllerWithIdentifier("ChatController")
+        self.presentViewController(chatController!, animated: true, completion: nil)
+    }
+    
+    // MARK: FBSDKLoginButtonDelegate method overrides
     
     func isLoggedIn() -> Bool {
         if FBSDKAccessToken.currentAccessToken() != nil {
@@ -46,6 +57,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             print(result.description)
         } else {
             print("Success")
+            toDashboard()
         }
         
     }
