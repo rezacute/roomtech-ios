@@ -8,29 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController, FBSDKLoginButtonDelegate {
-
+class LoginController: UIViewController, FBSDKLoginButtonDelegate {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (FBSDKAccessToken.currentAccessToken() != nil)
+        if (isLoggedIn())
         {
             // User is already logged in
         }
         else
         {
-            let loginButton = FBSDKLoginButton()
-            self.view.addSubview(loginButton)
-            loginButton.center = self.view.center
-            loginButton.readPermissions = ["public_profile", "email", "user_friends"]
-            loginButton.delegate = self
+            let fbLoginButton = FBSDKLoginButton()
+            self.view.addSubview(fbLoginButton)
+            fbLoginButton.center = CGPoint(x: self.view.center.x, y: 350)
+            fbLoginButton.readPermissions = ["public_profile", "email", "user_friends"]
+            fbLoginButton.delegate = self
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
+    func isLoggedIn() -> Bool {
+        if FBSDKAccessToken.currentAccessToken() != nil {
+            return true
+        }
+        return false
+    }
+ 
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         
         if (error != nil) {
@@ -38,7 +45,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         } else if result.isCancelled {
             print(result.description)
         } else {
-            
+            print("Success")
         }
         
     }
@@ -46,6 +53,5 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         print("Logged out")
     }
-
 }
 
