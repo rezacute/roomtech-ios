@@ -10,6 +10,10 @@ import UIKit
 
 class ChatController: JSQMessagesViewController {
     
+    // MARK: Variable declaration
+    
+    let messageData: NSMutableArray = []
+    
     // MARK: View Lifecyle
     
     override func viewDidLoad() {
@@ -37,7 +41,7 @@ class ChatController: JSQMessagesViewController {
     // Mark: JSQMessagesCollectionView data source
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
-        return nil
+        return self.messageData[indexPath.row] as! JSQMessageData
     }
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, didDeleteMessageAtIndexPath indexPath: NSIndexPath!) {
@@ -62,5 +66,9 @@ class ChatController: JSQMessagesViewController {
     
     override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellBottomLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
         return nil
+    }
+    
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.messageData.count
     }
 }
