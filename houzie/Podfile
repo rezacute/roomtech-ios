@@ -1,2 +1,4 @@
+inhibit_all_warnings!
+
 pod 'MatrixSDK'
 pod 'MatrixKit'
