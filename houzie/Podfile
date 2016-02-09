@@ -2,3 +2,7 @@ inhibit_all_warnings!
 
 pod 'MatrixSDK'
 pod 'MatrixKit'
+pod 'FBSDKCoreKit'
+pod 'FBSDKShareKit'
+pod 'FBSDKLoginKit'
+pod 'Google/SignIn'
