@@ -12,5 +12,5 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <JSQMessagesViewController/JSQMessages.h> 
-
+#import <MatrixSDK/MatrixSDK.h>
 #endif /* Bridging_Header_h */
