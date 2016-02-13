@@ -10,6 +10,8 @@
 		0F3AD6E7E990FCA0F4F92C25 /* libPods-houzieUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E81C02ABC14D6215787C1262 /* libPods-houzieUITests.a */; };
 		1E2814F81C6A09C700123E4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E2814F71C6A09C700123E4E /* GoogleService-Info.plist */; };
 		1E2814FA1C6A39F000123E4E /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2814F91C6A39F000123E4E /* ChatController.swift */; };
+		1EF1BD961C6F3B6D00E134D6 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF1BD941C6F3B6D00E134D6 /* avatar.png */; };
+		1EF1BD971C6F3B6D00E134D6 /* bot.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF1BD951C6F3B6D00E134D6 /* bot.png */; };
 		8019640AD1B3913ABC9FF28D /* libPods-houzie-houzieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C334508565A78D8B4D5731 /* libPods-houzie-houzieTests.a */; };
 		CBBC14A2809FB58744DF9CAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C119C3D0B0A0BA2A4E5B4E6B /* libPods.a */; };
 		D52D5EC31C6F191700FB2D23 /* HzManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D5EC21C6F191700FB2D23 /* HzManager.swift */; };
@@ -21,7 +23,6 @@
 		D5644DFB1C68D26700DC9681 /* houzieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644DFA1C68D26700DC9681 /* houzieTests.swift */; };
 		D5644E061C68D26700DC9681 /* houzieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644E051C68D26700DC9681 /* houzieUITests.swift */; };
 		DBACFB0969DE3BCB1C021D6E /* libPods-houzieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C53421C8774B9E8054F4DD3 /* libPods-houzieTests.a */; };
-		EEA6CDDAC437F2A9FBE7AD88 /* libPods-houzie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B9076D280ED370034FE223 /* libPods-houzie.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +46,9 @@
 		0B2A13BAD5155A4B252B8D44 /* Pods-houzieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-houzieTests/Pods-houzieTests.release.xcconfig"; sourceTree = "<group>"; };
 		1E2814F71C6A09C700123E4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E2814F91C6A39F000123E4E /* ChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
-		1E5424D31C6F02450067DE26 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = Images/avatar.png; sourceTree = "<group>"; };
-		1E5424D51C6F087B0067DE26 /* bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot.png; path = Images/bot.png; sourceTree = "<group>"; };
 		1EC4A1371C69A37E0097EDE5 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		1EF1BD941C6F3B6D00E134D6 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = Images/avatar.png; sourceTree = "<group>"; };
+		1EF1BD951C6F3B6D00E134D6 /* bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot.png; path = Images/bot.png; sourceTree = "<group>"; };
 		43C334508565A78D8B4D5731 /* libPods-houzie-houzieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-houzie-houzieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BADFF4B1375816A9DC4618 /* Pods-houzieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houzieTests/Pods-houzieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		80060192BBBA35A06621A4DB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -81,7 +82,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEA6CDDAC437F2A9FBE7AD88 /* libPods-houzie.a in Frameworks */,
 				CBBC14A2809FB58744DF9CAE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -109,8 +109,8 @@
 		1E5424D01C6F020B0067DE26 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				1E5424D51C6F087B0067DE26 /* bot.png */,
-				1E5424D31C6F02450067DE26 /* avatar.png */,
+				1EF1BD941C6F3B6D00E134D6 /* avatar.png */,
+				1EF1BD951C6F3B6D00E134D6 /* bot.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -313,9 +313,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5644DF01C68D26700DC9681 /* LaunchScreen.storyboard in Resources */,
-				1E5424D41C6F02450067DE26 /* avatar.png in Resources */,
+				1EF1BD961C6F3B6D00E134D6 /* avatar.png in Resources */,
 				1E2814F81C6A09C700123E4E /* GoogleService-Info.plist in Resources */,
-				1E5424D61C6F087B0067DE26 /* bot.png in Resources */,
+				1EF1BD971C6F3B6D00E134D6 /* bot.png in Resources */,
 				D5644DED1C68D26700DC9681 /* Assets.xcassets in Resources */,
 				D5644DEB1C68D26700DC9681 /* Main.storyboard in Resources */,
 			);
