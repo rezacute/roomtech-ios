@@ -22,15 +22,51 @@ class houzieTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let homeserver = "http://www.roomtech.io:8008"
+        let expectation = self.expectationWithDescription("high")
+        let credentials = MXCredentials(homeServer: homeserver, userId: "@riza:localhost", accessToken: "MDAxN2xvY2F0aW9uIGxvY2FsaG9zdAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMjJjaWQgdXNlcl9pZCA9IEByaXphOmxvY2FsaG9zdAowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAxZGNpZCB0aW1lIDwgMTQ1NDc3NjA2OTczNAowMDJmc2lnbmF0dXJlIF5TWbxwDikyXTyIqAQsG2wyvEXOZVQPEPOODKe11MoBCg")
+        let client = MXRestClient(credentials: credentials) { (datas) -> Bool in
+            return true
+        }
+        let mxSession = MXSession(matrixRestClient: client)
+        mxSession.start({ () -> Void in
+            print("",mxSession.rooms().count)
+            expectation.fulfill()
+            //
+            }) { (error ) -> Void in
+                
+                print(error.localizedDescription)
+                expectation.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(30.0) { (error ) -> Void in
+            print("error")
+        }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    func testSendRoom() {
+        let homeserver = "http://www.roomtech.io:8008"
+        let roomID = "!AtetEyzubXwpWQmvCX:localhost"
+        let expectation = self.expectationWithDescription("high")
+        let credentials = MXCredentials(homeServer: homeserver, userId: "@riza:localhost", accessToken: "MDAxN2xvY2F0aW9uIGxvY2FsaG9zdAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMjJjaWQgdXNlcl9pZCA9IEByaXphOmxvY2FsaG9zdAowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAxZGNpZCB0aW1lIDwgMTQ1NDc3NjA2OTczNAowMDJmc2lnbmF0dXJlIF5TWbxwDikyXTyIqAQsG2wyvEXOZVQPEPOODKe11MoBCg")
+        let client = MXRestClient(credentials: credentials) { (datas) -> Bool in
+            return true
         }
+        client.sendMessageToRoom(roomID,
+            msgType: kMXMessageTypeText,
+            content: ["body": "hello"],
+            success: { (result) -> Void in
+            print(result)
+            expectation.fulfill()
+            }) { (error ) -> Void in
+                print(error.localizedDescription)
+                expectation.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(30.0) { (error ) -> Void in
+            print("error")
+        }
+        
     }
     
 }
