@@ -1,9 +1,19 @@
+platform :ios, '9.0'
 inhibit_all_warnings!
-
 pod 'MatrixSDK'
 pod 'MatrixKit'
 pod 'FBSDKCoreKit'
 pod 'FBSDKShareKit'
 pod 'FBSDKLoginKit'
-pod 'JSQMessagesViewController'  
+pod 'JSQMessagesViewController'
 
+def testing_pods
+    pod 'OCMock', '~> 2.0.1'
+end
+
+target "houzieTests" do
+  testing_pods
+end
+target 'houzieUITests' do
+    testing_pods
+end
