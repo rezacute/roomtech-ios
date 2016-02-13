@@ -45,6 +45,8 @@
 		0B2A13BAD5155A4B252B8D44 /* Pods-houzieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-houzieTests/Pods-houzieTests.release.xcconfig"; sourceTree = "<group>"; };
 		1E2814F71C6A09C700123E4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E2814F91C6A39F000123E4E /* ChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
+		1E5424D31C6F02450067DE26 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = Images/avatar.png; sourceTree = "<group>"; };
+		1E5424D51C6F087B0067DE26 /* bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot.png; path = Images/bot.png; sourceTree = "<group>"; };
 		1EC4A1371C69A37E0097EDE5 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		43C334508565A78D8B4D5731 /* libPods-houzie-houzieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-houzie-houzieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BADFF4B1375816A9DC4618 /* Pods-houzieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houzieTests/Pods-houzieTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +106,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E5424D01C6F020B0067DE26 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1E5424D51C6F087B0067DE26 /* bot.png */,
+				1E5424D31C6F02450067DE26 /* avatar.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		2556AC32C5CCFDF646025074 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +167,7 @@
 		D5644DE41C68D26700DC9681 /* houzie */ = {
 			isa = PBXGroup;
 			children = (
+				1E5424D01C6F020B0067DE26 /* Images */,
 				1E2814F71C6A09C700123E4E /* GoogleService-Info.plist */,
 				D5644DE51C68D26700DC9681 /* AppDelegate.swift */,
 				D5644DE71C68D26700DC9681 /* LoginController.swift */,
@@ -301,7 +313,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5644DF01C68D26700DC9681 /* LaunchScreen.storyboard in Resources */,
+				1E5424D41C6F02450067DE26 /* avatar.png in Resources */,
 				1E2814F81C6A09C700123E4E /* GoogleService-Info.plist in Resources */,
+				1E5424D61C6F087B0067DE26 /* bot.png in Resources */,
 				D5644DED1C68D26700DC9681 /* Assets.xcassets in Resources */,
 				D5644DEB1C68D26700DC9681 /* Main.storyboard in Resources */,
 			);
