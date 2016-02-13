@@ -9,120 +9,142 @@
 import UIKit
 
 class ChatController: JSQMessagesViewController {
+  
+  // MARK: Variable declaration
+  
+  let messageData: NSMutableArray = []
+  let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
+  let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
+  let senderAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "avatar.png"), diameter: 30)
+  let botId = "90283-412412-41"
+  let botDisplayName = "Roomtech Bot"
+  let botAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "bot.png"), diameter: 30)
+  
+  // MARK: View Lifecyle
+  
+  override func viewDidLoad() {
     
-    // MARK: Variable declaration
+    super.viewDidLoad()
     
-    let messageData: NSMutableArray = []
-    let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
-    let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
-    let senderAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "avatar.png"), diameter: 30)
-    let botId = "90283-412412-41"
-    let botDisplayName = "Roomtech Bot"
-    let botAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "bot.png"), diameter: 30)
+    self.title = "Houzie"
     
-    // MARK: View Lifecyle
+    self.senderId = "053496-4509-289"
+    self.senderDisplayName = "Handoyo"
+    self.showLoadEarlierMessagesHeader = true
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.title = "Houzie"
-        
-        self.senderId = "053496-4509-289"
-        self.senderDisplayName = "Handoyo"
-        self.showLoadEarlierMessagesHeader = true
-        
-        initMessageData()
-    }
+    self.messageData.addObject(
+      JSQMessage(
+        senderId: self.senderId,
+        senderDisplayName: self.senderDisplayName,
+        date: NSDate.distantPast(),
+        text: "!smarthome get temperature"
+      )
+    )
+    self.messageData.addObject(
+      JSQMessage(
+        senderId: self.botId,
+        senderDisplayName: self.botDisplayName,
+        date: NSDate.distantPast(),
+        text: "Current Temperature is 28.59°C"
+      )
+    )
+  }
+  
+  // MARK: JSQMessagesViewController method overrides
+  
+  override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
     
-    // MARK: Initialization
+    JSQSystemSoundPlayer.jsq_playMessageSentSound()
     
-    func initMessageData() {
-        self.messageData.addObject(JSQMessage(
-            senderId: self.senderId,
-            senderDisplayName: self.senderDisplayName,
-            date: NSDate.distantPast(),
-            text: "!smarthome get temperature"
-            )
-        )
-        self.messageData.addObject(JSQMessage(
-            senderId: self.botId,
-            senderDisplayName: self.botDisplayName,
-            date: NSDate.distantPast(),
-            text: "Current Temperature is 28.59°C"
-            )
-        )
-    }
+    self.messageData.addObject(
+      JSQMessage(
+        senderId: senderId,
+        senderDisplayName: senderDisplayName,
+        date: date,
+        text: text
+      )
+    )
     
-    // MARK: JSQMessagesViewController method overrides
+    self.finishSendingMessageAnimated(true)
+  }
+  
+  override func didPressAccessoryButton(sender: UIButton!) {
     
-    override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
-        JSQSystemSoundPlayer.jsq_playMessageSentSound()
-        
-        self.messageData.addObject(JSQMessage(
-            senderId: senderId,
-            senderDisplayName: senderDisplayName,
-            date: date,
-            text: text
-            )
-        )
-        
-        self.finishSendingMessageAnimated(true)
-    }
+    self.inputToolbar?.contentView?.textView?.resignFirstResponder()
     
-    override func didPressAccessoryButton(sender: UIButton!) {
-        
-    }
+    let actionSheet = UIAlertController(
+      title: "Media",
+      message: "Send media message",
+      preferredStyle: UIAlertControllerStyle.ActionSheet
+    )
     
-    // Mark: JSQMessagesCollectionView data source
-    
-    override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
-        return self.messageData[indexPath.row] as! JSQMessageData
-    }
-    
-    override func collectionView(collectionView: JSQMessagesCollectionView!, didDeleteMessageAtIndexPath indexPath: NSIndexPath!) {
-        self.messageData.removeObjectAtIndex(indexPath.row)
-    }
-    
-    override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
-        let message = self.messageData[indexPath.row]
-        switch(message.senderId()) {
-            case self.senderId:
-                return self.outgoingBubble
-            default:
-                return self.incomingBubble
+    actionSheet.addAction(
+      UIAlertAction(
+        title: "Image",
+        style: UIAlertActionStyle.Default,
+        handler: { (UIAlertAction) -> Void in
         }
-    }
+      )
+    )
+  }
+  
+  // Mark: JSQMessagesCollectionView data source
+  
+  override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
     
-    override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
-        let message = self.messageData[indexPath.row]
-        switch(message.senderId()) {
-            case self.senderId:
-                return self.senderAvatar
-            default:
-                return self.botAvatar
-        }
-    }
+    return self.messageData[indexPath.row] as! JSQMessageData
+  }
+  
+  override func collectionView(collectionView: JSQMessagesCollectionView!, didDeleteMessageAtIndexPath indexPath: NSIndexPath!) {
     
-    override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
-        let message = self.messageData[indexPath.row]
-        return NSAttributedString(string: message.senderDisplayName())
-    }
+    self.messageData.removeObjectAtIndex(indexPath.row)
+  }
+  
+  override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
     
-    override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
-        let message = self.messageData[indexPath.row]
-        
-        return NSAttributedString(string: message.senderDisplayName())
+    let message = self.messageData[indexPath.row]
+    switch(message.senderId()) {
+    case self.senderId:
+      return self.outgoingBubble
+    default:
+      return self.incomingBubble
     }
+  }
+  
+  override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
     
-    override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellBottomLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
-        let message = self.messageData[indexPath.row]
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        
-        return NSAttributedString(string: dateFormatter.stringFromDate(message.date!!))
+    let message = self.messageData[indexPath.row]
+    switch(message.senderId()) {
+    case self.senderId:
+      return self.senderAvatar
+    default:
+      return self.botAvatar
     }
+  }
+  
+  override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
     
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.messageData.count
-    }
+    let message = self.messageData[indexPath.row]
+    return NSAttributedString(string: message.senderDisplayName())
+  }
+  
+  override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
+    
+    let message = self.messageData[indexPath.row]
+    return JSQMessagesTimestampFormatter.sharedFormatter().attributedTimestampForDate(message.date)
+  }
+  
+  override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellBottomLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
+    
+    let message = self.messageData[indexPath.row]
+    let dateFormatter = NSDateFormatter()
+    dateFormatter.dateFormat = "HH:mm"
+    
+    return NSAttributedString(string: dateFormatter.stringFromDate(message.date!!))
+  }
+  
+  override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+    return self.messageData.count
+  }
 }
