@@ -22,28 +22,6 @@ class houzieTests: XCTestCase {
     }
     
     func testExample() {
-        /**
-         MXCredentials *credentials = [[MXCredentials alloc] initWithHomeServer:@"http://matrix.org"
-         userId:@"@your_user_id:matrix.org"
-         accessToken:@"your_access_tokem"];
-         
-         // Create a matrix session
-         MXRestClient *mxRestClient = [[MXRestClient alloc] initWithCredentials:credentials];
-         
-         // Create a matrix session
-         MXSession *mxSession = [[MXSession alloc] initWithMatrixRestClient:mxRestClient];
-         
-         // Launch mxSession: it will first make an initial sync with the home server
-         // Then it will listen to new coming events and update its data
-         [mxSession start:^{
-         
-         // mxSession is ready to be used
-         // Now we can get all rooms with:
-         mxSession.rooms;
-         
-         } failure:^(NSError *error) {
-         }];
-*/
         let homeserver = "http://www.roomtech.io:8008"
         let expectation = self.expectationWithDescription("high")
         let credentials = MXCredentials(homeServer: homeserver, userId: "@riza:localhost", accessToken: "MDAxN2xvY2F0aW9uIGxvY2FsaG9zdAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMjJjaWQgdXNlcl9pZCA9IEByaXphOmxvY2FsaG9zdAowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAxZGNpZCB0aW1lIDwgMTQ1NDc3NjA2OTczNAowMDJmc2lnbmF0dXJlIF5TWbxwDikyXTyIqAQsG2wyvEXOZVQPEPOODKe11MoBCg")
@@ -60,17 +38,35 @@ class houzieTests: XCTestCase {
                 print(error.localizedDescription)
                 expectation.fulfill()
         }
-
+        
         self.waitForExpectationsWithTimeout(30.0) { (error ) -> Void in
             print("error")
         }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    func testSendRoom() {
+        let homeserver = "http://www.roomtech.io:8008"
+        let roomID = "!AtetEyzubXwpWQmvCX:localhost"
+        let expectation = self.expectationWithDescription("high")
+        let credentials = MXCredentials(homeServer: homeserver, userId: "@riza:localhost", accessToken: "MDAxN2xvY2F0aW9uIGxvY2FsaG9zdAowMDEzaWRlbnRpZmllciBrZXkKMDAxMGNpZCBnZW4gPSAxCjAwMjJjaWQgdXNlcl9pZCA9IEByaXphOmxvY2FsaG9zdAowMDE2Y2lkIHR5cGUgPSBhY2Nlc3MKMDAxZGNpZCB0aW1lIDwgMTQ1NDc3NjA2OTczNAowMDJmc2lnbmF0dXJlIF5TWbxwDikyXTyIqAQsG2wyvEXOZVQPEPOODKe11MoBCg")
+        let client = MXRestClient(credentials: credentials) { (datas) -> Bool in
+            return true
         }
+        client.sendMessageToRoom(roomID,
+            msgType: kMXMessageTypeText,
+            content: ["body": "hello"],
+            success: { (result) -> Void in
+            print(result)
+            expectation.fulfill()
+            }) { (error ) -> Void in
+                print(error.localizedDescription)
+                expectation.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(30.0) { (error ) -> Void in
+            print("error")
+        }
+        
     }
     
 }
