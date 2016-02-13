@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F3AD6E7E990FCA0F4F92C25 /* libPods-houzieUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E81C02ABC14D6215787C1262 /* libPods-houzieUITests.a */; };
 		1E2814F81C6A09C700123E4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E2814F71C6A09C700123E4E /* GoogleService-Info.plist */; };
 		1E2814FA1C6A39F000123E4E /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2814F91C6A39F000123E4E /* ChatController.swift */; };
-		1E5424D41C6F02450067DE26 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E5424D31C6F02450067DE26 /* avatar.png */; };
-		1E5424D61C6F087B0067DE26 /* bot.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E5424D51C6F087B0067DE26 /* bot.png */; };
-		2F0AB5E585C57F6312AB6C9E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A9A18A32B78D61034DE7FAC /* libPods.a */; };
+		8019640AD1B3913ABC9FF28D /* libPods-houzie-houzieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C334508565A78D8B4D5731 /* libPods-houzie-houzieTests.a */; };
+		CBBC14A2809FB58744DF9CAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C119C3D0B0A0BA2A4E5B4E6B /* libPods.a */; };
+		D52D5EC31C6F191700FB2D23 /* HzManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D5EC21C6F191700FB2D23 /* HzManager.swift */; };
 		D5644DE61C68D26700DC9681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644DE51C68D26700DC9681 /* AppDelegate.swift */; };
 		D5644DE81C68D26700DC9681 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644DE71C68D26700DC9681 /* LoginController.swift */; };
 		D5644DEB1C68D26700DC9681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5644DE91C68D26700DC9681 /* Main.storyboard */; };
@@ -19,6 +20,8 @@
 		D5644DF01C68D26700DC9681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5644DEE1C68D26700DC9681 /* LaunchScreen.storyboard */; };
 		D5644DFB1C68D26700DC9681 /* houzieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644DFA1C68D26700DC9681 /* houzieTests.swift */; };
 		D5644E061C68D26700DC9681 /* houzieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644E051C68D26700DC9681 /* houzieUITests.swift */; };
+		DBACFB0969DE3BCB1C021D6E /* libPods-houzieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C53421C8774B9E8054F4DD3 /* libPods-houzieTests.a */; };
+		EEA6CDDAC437F2A9FBE7AD88 /* libPods-houzie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B9076D280ED370034FE223 /* libPods-houzie.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,14 +42,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B2A13BAD5155A4B252B8D44 /* Pods-houzieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-houzieTests/Pods-houzieTests.release.xcconfig"; sourceTree = "<group>"; };
 		1E2814F71C6A09C700123E4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E2814F91C6A39F000123E4E /* ChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		1E5424D31C6F02450067DE26 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = Images/avatar.png; sourceTree = "<group>"; };
 		1E5424D51C6F087B0067DE26 /* bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot.png; path = Images/bot.png; sourceTree = "<group>"; };
 		1EC4A1371C69A37E0097EDE5 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		4A9A18A32B78D61034DE7FAC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		43C334508565A78D8B4D5731 /* libPods-houzie-houzieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-houzie-houzieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61BADFF4B1375816A9DC4618 /* Pods-houzieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houzieTests/Pods-houzieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		80060192BBBA35A06621A4DB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8AC6AC057784362F697EB00C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		8C53421C8774B9E8054F4DD3 /* libPods-houzieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-houzieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AADD8A99E1981C7DAEDC4738 /* Pods-houzie-houzieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzie-houzieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houzie-houzieTests/Pods-houzie-houzieTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ACC1F4C0043EEF9ABFBDA5E0 /* Pods-houzieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-houzieUITests/Pods-houzieUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AF5ABDBC629384F8D3E27664 /* Pods-houzie-houzieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzie-houzieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-houzie-houzieTests/Pods-houzie-houzieTests.release.xcconfig"; sourceTree = "<group>"; };
+		C119C3D0B0A0BA2A4E5B4E6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C684876F3BF3781A04A6112C /* Pods-houzieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houzieUITests/Pods-houzieUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D52D5EC21C6F191700FB2D23 /* HzManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HzManager.swift; sourceTree = "<group>"; };
 		D5644DE21C68D26700DC9681 /* houzie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = houzie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5644DE51C68D26700DC9681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5644DE71C68D26700DC9681 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -60,6 +72,8 @@
 		D5644E011C68D26700DC9681 /* houzieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = houzieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5644E051C68D26700DC9681 /* houzieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = houzieUITests.swift; sourceTree = "<group>"; };
 		D5644E071C68D26700DC9681 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6B9076D280ED370034FE223 /* libPods-houzie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-houzie.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E81C02ABC14D6215787C1262 /* libPods-houzieUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-houzieUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +81,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F0AB5E585C57F6312AB6C9E /* libPods.a in Frameworks */,
+				EEA6CDDAC437F2A9FBE7AD88 /* libPods-houzie.a in Frameworks */,
+				CBBC14A2809FB58744DF9CAE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +90,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8019640AD1B3913ABC9FF28D /* libPods-houzie-houzieTests.a in Frameworks */,
+				DBACFB0969DE3BCB1C021D6E /* libPods-houzieTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F3AD6E7E990FCA0F4F92C25 /* libPods-houzieUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +120,12 @@
 			children = (
 				80060192BBBA35A06621A4DB /* Pods.debug.xcconfig */,
 				8AC6AC057784362F697EB00C /* Pods.release.xcconfig */,
+				AADD8A99E1981C7DAEDC4738 /* Pods-houzie-houzieTests.debug.xcconfig */,
+				AF5ABDBC629384F8D3E27664 /* Pods-houzie-houzieTests.release.xcconfig */,
+				C684876F3BF3781A04A6112C /* Pods-houzieUITests.debug.xcconfig */,
+				ACC1F4C0043EEF9ABFBDA5E0 /* Pods-houzieUITests.release.xcconfig */,
+				61BADFF4B1375816A9DC4618 /* Pods-houzieTests.debug.xcconfig */,
+				0B2A13BAD5155A4B252B8D44 /* Pods-houzieTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -109,7 +133,11 @@
 		572872CD2D6CF7C5A9DE5A57 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4A9A18A32B78D61034DE7FAC /* libPods.a */,
+				D6B9076D280ED370034FE223 /* libPods-houzie.a */,
+				43C334508565A78D8B4D5731 /* libPods-houzie-houzieTests.a */,
+				C119C3D0B0A0BA2A4E5B4E6B /* libPods.a */,
+				E81C02ABC14D6215787C1262 /* libPods-houzieUITests.a */,
+				8C53421C8774B9E8054F4DD3 /* libPods-houzieTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -149,6 +177,7 @@
 				D5644DEC1C68D26700DC9681 /* Assets.xcassets */,
 				D5644DEE1C68D26700DC9681 /* LaunchScreen.storyboard */,
 				D5644DF11C68D26700DC9681 /* Info.plist */,
+				D52D5EC21C6F191700FB2D23 /* HzManager.swift */,
 			);
 			path = houzie;
 			sourceTree = "<group>";
@@ -198,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5644E0D1C68D26700DC9681 /* Build configuration list for PBXNativeTarget "houzieTests" */;
 			buildPhases = (
+				7D8831A9E747CCAF353BF873 /* Check Pods Manifest.lock */,
 				D5644DF21C68D26700DC9681 /* Sources */,
 				D5644DF31C68D26700DC9681 /* Frameworks */,
 				D5644DF41C68D26700DC9681 /* Resources */,
+				F3CB1E2613E371E6ADEC7A2F /* Embed Pods Frameworks */,
+				BEB1C6CDEE179F19871E7AC9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5644E101C68D26700DC9681 /* Build configuration list for PBXNativeTarget "houzieUITests" */;
 			buildPhases = (
+				A99FE6F91F381C323E818F18 /* Check Pods Manifest.lock */,
 				D5644DFD1C68D26700DC9681 /* Sources */,
 				D5644DFE1C68D26700DC9681 /* Frameworks */,
 				D5644DFF1C68D26700DC9681 /* Resources */,
+				CCB43FF1E58FCCE84289BEA1 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -334,6 +368,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7D8831A9E747CCAF353BF873 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A99FE6F91F381C323E818F18 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BEB1C6CDEE179F19871E7AC9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-houzieTests/Pods-houzieTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C96EE592A53CF824D3BB05CB /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -349,6 +428,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CCB43FF1E58FCCE84289BEA1 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-houzieUITests/Pods-houzieUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3CB1E2613E371E6ADEC7A2F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-houzieTests/Pods-houzieTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -359,6 +468,7 @@
 				D5644DE81C68D26700DC9681 /* LoginController.swift in Sources */,
 				D5644DE61C68D26700DC9681 /* AppDelegate.swift in Sources */,
 				1E2814FA1C6A39F000123E4E /* ChatController.swift in Sources */,
+				D52D5EC31C6F191700FB2D23 /* HzManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,6 +632,7 @@
 		};
 		D5644E0E1C68D26700DC9681 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61BADFF4B1375816A9DC4618 /* Pods-houzieTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = houzieTests/Info.plist;
@@ -534,6 +645,7 @@
 		};
 		D5644E0F1C68D26700DC9681 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B2A13BAD5155A4B252B8D44 /* Pods-houzieTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = houzieTests/Info.plist;
@@ -546,6 +658,7 @@
 		};
 		D5644E111C68D26700DC9681 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C684876F3BF3781A04A6112C /* Pods-houzieUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = houzieUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -558,6 +671,7 @@
 		};
 		D5644E121C68D26700DC9681 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACC1F4C0043EEF9ABFBDA5E0 /* Pods-houzieUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = houzieUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
