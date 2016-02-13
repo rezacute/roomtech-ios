@@ -13,6 +13,8 @@
 		8019640AD1B3913ABC9FF28D /* libPods-houzie-houzieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C334508565A78D8B4D5731 /* libPods-houzie-houzieTests.a */; };
 		CBBC14A2809FB58744DF9CAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C119C3D0B0A0BA2A4E5B4E6B /* libPods.a */; };
 		D52D5EC31C6F191700FB2D23 /* HzManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D5EC21C6F191700FB2D23 /* HzManager.swift */; };
+		D52D5EC61C6F2C3D00FB2D23 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D5EC51C6F2C3D00FB2D23 /* Command.swift */; };
+		D52D5EC81C6F2D0500FB2D23 /* CommandTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D5EC71C6F2D0500FB2D23 /* CommandTest.swift */; };
 		D5644DE61C68D26700DC9681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644DE51C68D26700DC9681 /* AppDelegate.swift */; };
 		D5644DE81C68D26700DC9681 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644DE71C68D26700DC9681 /* LoginController.swift */; };
 		D5644DEB1C68D26700DC9681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5644DE91C68D26700DC9681 /* Main.storyboard */; };
@@ -59,6 +61,8 @@
 		C119C3D0B0A0BA2A4E5B4E6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C684876F3BF3781A04A6112C /* Pods-houzieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houzieUITests/Pods-houzieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D52D5EC21C6F191700FB2D23 /* HzManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HzManager.swift; sourceTree = "<group>"; };
+		D52D5EC51C6F2C3D00FB2D23 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		D52D5EC71C6F2D0500FB2D23 /* CommandTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTest.swift; sourceTree = "<group>"; };
 		D5644DE21C68D26700DC9681 /* houzie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = houzie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5644DE51C68D26700DC9681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5644DE71C68D26700DC9681 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -142,6 +146,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D52D5EC41C6F2C2C00FB2D23 /* commands */ = {
+			isa = PBXGroup;
+			children = (
+				D52D5EC51C6F2C3D00FB2D23 /* Command.swift */,
+			);
+			name = commands;
+			sourceTree = "<group>";
+		};
 		D5644DD91C68D26700DC9681 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +179,7 @@
 		D5644DE41C68D26700DC9681 /* houzie */ = {
 			isa = PBXGroup;
 			children = (
+				D52D5EC41C6F2C2C00FB2D23 /* commands */,
 				1E5424D01C6F020B0067DE26 /* Images */,
 				1E2814F71C6A09C700123E4E /* GoogleService-Info.plist */,
 				D5644DE51C68D26700DC9681 /* AppDelegate.swift */,
@@ -187,6 +200,7 @@
 			children = (
 				D5644DFA1C68D26700DC9681 /* houzieTests.swift */,
 				D5644DFC1C68D26700DC9681 /* Info.plist */,
+				D52D5EC71C6F2D0500FB2D23 /* CommandTest.swift */,
 			);
 			path = houzieTests;
 			sourceTree = "<group>";
@@ -313,9 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5644DF01C68D26700DC9681 /* LaunchScreen.storyboard in Resources */,
-				1E5424D41C6F02450067DE26 /* avatar.png in Resources */,
 				1E2814F81C6A09C700123E4E /* GoogleService-Info.plist in Resources */,
-				1E5424D61C6F087B0067DE26 /* bot.png in Resources */,
 				D5644DED1C68D26700DC9681 /* Assets.xcassets in Resources */,
 				D5644DEB1C68D26700DC9681 /* Main.storyboard in Resources */,
 			);
@@ -468,6 +480,7 @@
 				D5644DE81C68D26700DC9681 /* LoginController.swift in Sources */,
 				D5644DE61C68D26700DC9681 /* AppDelegate.swift in Sources */,
 				1E2814FA1C6A39F000123E4E /* ChatController.swift in Sources */,
+				D52D5EC61C6F2C3D00FB2D23 /* Command.swift in Sources */,
 				D52D5EC31C6F191700FB2D23 /* HzManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +490,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5644DFB1C68D26700DC9681 /* houzieTests.swift in Sources */,
+				D52D5EC81C6F2D0500FB2D23 /* CommandTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
