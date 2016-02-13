@@ -15,6 +15,7 @@ class ChatController: JSQMessagesViewController {
   let messageData: NSMutableArray = []
   let incomingBubble = JSQMessagesBubbleImageFactory().incomingMessagesBubbleImageWithColor(UIColor.lightGrayColor())
   let outgoingBubble = JSQMessagesBubbleImageFactory().outgoingMessagesBubbleImageWithColor(UIColor(red: 10/255, green: 180/255, blue: 230/255, alpha: 1.0))
+  
   let senderAvatar = JSQMessagesAvatarImageFactory.avatarImageWithImage(UIImage(named: "avatar.png"), diameter: 30)
   let botId = "90283-412412-41"
   let botDisplayName = "Roomtech Bot"
@@ -23,27 +24,25 @@ class ChatController: JSQMessagesViewController {
   // MARK: View Lifecyle
   
   override func viewDidLoad() {
-    
     super.viewDidLoad()
+  
+    title = "Houzie"
+    senderId = "053496-4509-289"
+    senderDisplayName = "Handoyo"
+    showLoadEarlierMessagesHeader = true
     
-    self.title = "Houzie"
-    
-    self.senderId = "053496-4509-289"
-    self.senderDisplayName = "Handoyo"
-    self.showLoadEarlierMessagesHeader = true
-    
-    self.messageData.addObject(
+    messageData.addObject(
       JSQMessage(
-        senderId: self.senderId,
-        senderDisplayName: self.senderDisplayName,
+        senderId: senderId,
+        senderDisplayName: senderDisplayName,
         date: NSDate.distantPast(),
         text: "!smarthome get temperature"
       )
     )
-    self.messageData.addObject(
+    messageData.addObject(
       JSQMessage(
-        senderId: self.botId,
-        senderDisplayName: self.botDisplayName,
+        senderId: botId,
+        senderDisplayName: botDisplayName,
         date: NSDate.distantPast(),
         text: "Current Temperature is 28.59°C"
       )
@@ -53,10 +52,9 @@ class ChatController: JSQMessagesViewController {
   // MARK: JSQMessagesViewController method overrides
   
   override func didPressSendButton(button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: NSDate!) {
-    
     JSQSystemSoundPlayer.jsq_playMessageSentSound()
     
-    self.messageData.addObject(
+    messageData.addObject(
       JSQMessage(
         senderId: senderId,
         senderDisplayName: senderDisplayName,
@@ -65,78 +63,85 @@ class ChatController: JSQMessagesViewController {
       )
     )
     
-    self.finishSendingMessageAnimated(true)
+    finishSendingMessageAnimated(true)
   }
   
   override func didPressAccessoryButton(sender: UIButton!) {
+    inputToolbar?.contentView?.textView?.resignFirstResponder()
     
-    self.inputToolbar?.contentView?.textView?.resignFirstResponder()
-    
-    let actionSheet = UIAlertController(
+    let actionSheetController = UIAlertController(
       title: "Media",
       message: "Send media message",
       preferredStyle: UIAlertControllerStyle.ActionSheet
     )
-    
-    actionSheet.addAction(
+    actionSheetController.addAction(
       UIAlertAction(
         title: "Image",
         style: UIAlertActionStyle.Default,
         handler: { (UIAlertAction) -> Void in
+          let imagePickerController = UIImagePickerController()
+          imagePickerController.sourceType = UIImagePickerControllerSourceType.SavedPhotosAlbum
+          imagePickerController.allowsEditing = false
+          imagePickerController.delegate = self
+          self.presentViewController(imagePickerController, animated: true, completion: { () -> Void in
+          })
         }
       )
     )
+    actionSheetController.addAction(
+      UIAlertAction(
+        title: "Cancel",
+        style: UIAlertActionStyle.Cancel,
+        handler: { (UIAlertAction) -> Void in
+        }
+      )
+    )
+    presentViewController(actionSheetController, animated: true) { () -> Void in
+    }
   }
   
-  // Mark: JSQMessagesCollectionView data source
+  // MARK: JSQMessagesCollectionView data source
   
   override func collectionView(collectionView: JSQMessagesCollectionView!, messageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageData! {
-    
-    return self.messageData[indexPath.row] as! JSQMessageData
+    return messageData[indexPath.row] as! JSQMessageData
   }
   
   override func collectionView(collectionView: JSQMessagesCollectionView!, didDeleteMessageAtIndexPath indexPath: NSIndexPath!) {
-    
-    self.messageData.removeObjectAtIndex(indexPath.row)
+    messageData.removeObjectAtIndex(indexPath.row)
   }
   
   override func collectionView(collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageBubbleImageDataSource! {
-    
-    let message = self.messageData[indexPath.row]
+    let message = messageData[indexPath.row]
     switch(message.senderId()) {
-    case self.senderId:
-      return self.outgoingBubble
-    default:
-      return self.incomingBubble
+      case senderId:
+        return outgoingBubble
+      default:
+        return incomingBubble
     }
   }
   
   override func collectionView(collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAtIndexPath indexPath: NSIndexPath!) -> JSQMessageAvatarImageDataSource! {
-    
-    let message = self.messageData[indexPath.row]
+    let message = messageData[indexPath.row]
     switch(message.senderId()) {
-    case self.senderId:
-      return self.senderAvatar
-    default:
-      return self.botAvatar
+      case senderId:
+        return senderAvatar
+      default:
+        return botAvatar
     }
   }
   
   override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
-    
-    let message = self.messageData[indexPath.row]
+    let message = messageData[indexPath.row]
     return NSAttributedString(string: message.senderDisplayName())
   }
   
   override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellTopLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
-    
-    let message = self.messageData[indexPath.row]
+    let message = messageData[indexPath.row]
     return JSQMessagesTimestampFormatter.sharedFormatter().attributedTimestampForDate(message.date)
   }
   
   override func collectionView(collectionView: JSQMessagesCollectionView!, attributedTextForCellBottomLabelAtIndexPath indexPath: NSIndexPath!) -> NSAttributedString! {
-    
-    let message = self.messageData[indexPath.row]
+    let message = messageData[indexPath.row]
     let dateFormatter = NSDateFormatter()
     dateFormatter.dateFormat = "HH:mm"
     
@@ -144,7 +149,31 @@ class ChatController: JSQMessagesViewController {
   }
   
   override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    
-    return self.messageData.count
+    return messageData.count
   }
+}
+
+// MARK: UIImagePickerControllerDelegate
+
+extension ChatController: UIImagePickerControllerDelegate {
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+    self.dismissViewControllerAnimated(true) { () -> Void in
+    }
+    
+    let imageItem = JSQPhotoMediaItem(image: image)
+    let imageMessage = JSQMessage(
+      senderId: senderId,
+      senderDisplayName: senderDisplayName,
+      date: NSDate(),
+      media: imageItem
+    )
+    messageData.addObject(imageMessage)
+    collectionView?.reloadData()
+  }
+}
+
+// MARK: UINavigationControllerDelegate
+
+extension ChatController: UINavigationControllerDelegate {
+  
 }
