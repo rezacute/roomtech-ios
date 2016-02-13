@@ -43,14 +43,10 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
   // MARK: FBSDKLoginButtonDelegate method overrides
   
   func isLoggedIn() -> Bool {
-    if FBSDKAccessToken.currentAccessToken() != nil {
-      return true
-    }
-    return false
+    return FBSDKAccessToken.currentAccessToken() != nil
   }
   
   func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-    
     if (error != nil) {
       print(error.description)
     } else if result.isCancelled {
@@ -59,7 +55,6 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
       print("Success")
       toDashboard()
     }
-    
   }
   
   func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {

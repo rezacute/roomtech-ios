@@ -85,4 +85,8 @@
       <string>fbshareextension</string>
     </array>
   </dict>
+  <key>NSAppTransportSecurity</key>
+  <dict>
+    <key>NSAllowsArbitraryLoads</key><true/>
+  </dict>
 </plist>
