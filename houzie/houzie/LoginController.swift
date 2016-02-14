@@ -53,6 +53,11 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
       print(result.description)
     } else {
       print("Success")
+      
+      let fbRequest = FBSDKGraphRequest(graphPath: "/me", parameters:["fields" : "id,name,picture.width(100).height(100)"])
+      fbRequest.startWithCompletionHandler({ (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
+        print(result.valueForKey("picture")!.valueForKey("data")!.valueForKey("url"))
+      })
       toDashboard()
     }
   }

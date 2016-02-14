@@ -10,22 +10,31 @@
 		0F3AD6E7E990FCA0F4F92C25 /* libPods-houzieUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E81C02ABC14D6215787C1262 /* libPods-houzieUITests.a */; };
 		1E2814F81C6A09C700123E4E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1E2814F71C6A09C700123E4E /* GoogleService-Info.plist */; };
 		1E2814FA1C6A39F000123E4E /* ChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2814F91C6A39F000123E4E /* ChatController.swift */; };
-		1EF1BD961C6F3B6D00E134D6 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF1BD941C6F3B6D00E134D6 /* avatar.png */; };
-		1EF1BD971C6F3B6D00E134D6 /* bot.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF1BD951C6F3B6D00E134D6 /* bot.png */; };
+		1EF1BDAA1C6F6D5A00E134D6 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF1BDA81C6F6D5A00E134D6 /* avatar.png */; };
+		1EF1BDAB1C6F6D5A00E134D6 /* bot.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EF1BDA91C6F6D5A00E134D6 /* bot.png */; };
+		1EF1BDB31C6FFE2A00E134D6 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF1BDB21C6FFE2A00E134D6 /* KeyboardViewController.swift */; };
+		1EF1BDB71C6FFE2A00E134D6 /* RoomtechKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1EF1BDB01C6FFE2A00E134D6 /* RoomtechKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8019640AD1B3913ABC9FF28D /* libPods-houzie-houzieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C334508565A78D8B4D5731 /* libPods-houzie-houzieTests.a */; };
 		CBBC14A2809FB58744DF9CAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C119C3D0B0A0BA2A4E5B4E6B /* libPods.a */; };
 		D52D5EC31C6F191700FB2D23 /* HzManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D5EC21C6F191700FB2D23 /* HzManager.swift */; };
+		D52D5EC61C6F2C3D00FB2D23 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D5EC51C6F2C3D00FB2D23 /* Command.swift */; };
+		D52D5EC81C6F2D0500FB2D23 /* CommandTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D52D5EC71C6F2D0500FB2D23 /* CommandTest.swift */; };
 		D5644DE61C68D26700DC9681 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644DE51C68D26700DC9681 /* AppDelegate.swift */; };
 		D5644DE81C68D26700DC9681 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644DE71C68D26700DC9681 /* LoginController.swift */; };
 		D5644DEB1C68D26700DC9681 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5644DE91C68D26700DC9681 /* Main.storyboard */; };
-		D5644DED1C68D26700DC9681 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5644DEC1C68D26700DC9681 /* Assets.xcassets */; };
-		D5644DF01C68D26700DC9681 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5644DEE1C68D26700DC9681 /* LaunchScreen.storyboard */; };
 		D5644DFB1C68D26700DC9681 /* houzieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644DFA1C68D26700DC9681 /* houzieTests.swift */; };
 		D5644E061C68D26700DC9681 /* houzieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5644E051C68D26700DC9681 /* houzieUITests.swift */; };
 		DBACFB0969DE3BCB1C021D6E /* libPods-houzieTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C53421C8774B9E8054F4DD3 /* libPods-houzieTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		1EF1BDB51C6FFE2A00E134D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5644DDA1C68D26700DC9681 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EF1BDAF1C6FFE2A00E134D6;
+			remoteInfo = RoomtechKeyboard;
+		};
 		D5644DF71C68D26700DC9681 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D5644DDA1C68D26700DC9681 /* Project object */;
@@ -42,13 +51,30 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1EF1BDBB1C6FFE2A00E134D6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1EF1BDB71C6FFE2A00E134D6 /* RoomtechKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0B2A13BAD5155A4B252B8D44 /* Pods-houzieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-houzieTests/Pods-houzieTests.release.xcconfig"; sourceTree = "<group>"; };
 		1E2814F71C6A09C700123E4E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1E2814F91C6A39F000123E4E /* ChatController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatController.swift; sourceTree = "<group>"; };
 		1EC4A1371C69A37E0097EDE5 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		1EF1BD941C6F3B6D00E134D6 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = Images/avatar.png; sourceTree = "<group>"; };
-		1EF1BD951C6F3B6D00E134D6 /* bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot.png; path = Images/bot.png; sourceTree = "<group>"; };
+		1EF1BDA81C6F6D5A00E134D6 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = avatar.png; path = Images/avatar.png; sourceTree = "<group>"; };
+		1EF1BDA91C6F6D5A00E134D6 /* bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bot.png; path = Images/bot.png; sourceTree = "<group>"; };
+		1EF1BDB01C6FFE2A00E134D6 /* RoomtechKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RoomtechKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EF1BDB21C6FFE2A00E134D6 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		1EF1BDB41C6FFE2A00E134D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43C334508565A78D8B4D5731 /* libPods-houzie-houzieTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-houzie-houzieTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BADFF4B1375816A9DC4618 /* Pods-houzieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houzieTests/Pods-houzieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		80060192BBBA35A06621A4DB /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -60,6 +86,8 @@
 		C119C3D0B0A0BA2A4E5B4E6B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C684876F3BF3781A04A6112C /* Pods-houzieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-houzieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-houzieUITests/Pods-houzieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D52D5EC21C6F191700FB2D23 /* HzManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HzManager.swift; sourceTree = "<group>"; };
+		D52D5EC51C6F2C3D00FB2D23 /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
+		D52D5EC71C6F2D0500FB2D23 /* CommandTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandTest.swift; sourceTree = "<group>"; };
 		D5644DE21C68D26700DC9681 /* houzie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = houzie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5644DE51C68D26700DC9681 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5644DE71C68D26700DC9681 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -78,6 +106,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1EF1BDAD1C6FFE2A00E134D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5644DDF1C68D26700DC9681 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -109,10 +144,19 @@
 		1E5424D01C6F020B0067DE26 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				1EF1BD941C6F3B6D00E134D6 /* avatar.png */,
-				1EF1BD951C6F3B6D00E134D6 /* bot.png */,
+				1EF1BDA81C6F6D5A00E134D6 /* avatar.png */,
+				1EF1BDA91C6F6D5A00E134D6 /* bot.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		1EF1BDB11C6FFE2A00E134D6 /* RoomtechKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1EF1BDB21C6FFE2A00E134D6 /* KeyboardViewController.swift */,
+				1EF1BDB41C6FFE2A00E134D6 /* Info.plist */,
+			);
+			path = RoomtechKeyboard;
 			sourceTree = "<group>";
 		};
 		2556AC32C5CCFDF646025074 /* Pods */ = {
@@ -142,12 +186,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D52D5EC41C6F2C2C00FB2D23 /* commands */ = {
+			isa = PBXGroup;
+			children = (
+				D52D5EC51C6F2C3D00FB2D23 /* Command.swift */,
+			);
+			name = commands;
+			sourceTree = "<group>";
+		};
 		D5644DD91C68D26700DC9681 = {
 			isa = PBXGroup;
 			children = (
 				D5644DE41C68D26700DC9681 /* houzie */,
 				D5644DF91C68D26700DC9681 /* houzieTests */,
 				D5644E041C68D26700DC9681 /* houzieUITests */,
+				1EF1BDB11C6FFE2A00E134D6 /* RoomtechKeyboard */,
 				D5644DE31C68D26700DC9681 /* Products */,
 				2556AC32C5CCFDF646025074 /* Pods */,
 				572872CD2D6CF7C5A9DE5A57 /* Frameworks */,
@@ -160,6 +213,7 @@
 				D5644DE21C68D26700DC9681 /* houzie.app */,
 				D5644DF61C68D26700DC9681 /* houzieTests.xctest */,
 				D5644E011C68D26700DC9681 /* houzieUITests.xctest */,
+				1EF1BDB01C6FFE2A00E134D6 /* RoomtechKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +221,7 @@
 		D5644DE41C68D26700DC9681 /* houzie */ = {
 			isa = PBXGroup;
 			children = (
+				D52D5EC41C6F2C2C00FB2D23 /* commands */,
 				1E5424D01C6F020B0067DE26 /* Images */,
 				1E2814F71C6A09C700123E4E /* GoogleService-Info.plist */,
 				D5644DE51C68D26700DC9681 /* AppDelegate.swift */,
@@ -187,6 +242,7 @@
 			children = (
 				D5644DFA1C68D26700DC9681 /* houzieTests.swift */,
 				D5644DFC1C68D26700DC9681 /* Info.plist */,
+				D52D5EC71C6F2D0500FB2D23 /* CommandTest.swift */,
 			);
 			path = houzieTests;
 			sourceTree = "<group>";
@@ -203,6 +259,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1EF1BDAF1C6FFE2A00E134D6 /* RoomtechKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EF1BDB81C6FFE2A00E134D6 /* Build configuration list for PBXNativeTarget "RoomtechKeyboard" */;
+			buildPhases = (
+				1EF1BDAC1C6FFE2A00E134D6 /* Sources */,
+				1EF1BDAD1C6FFE2A00E134D6 /* Frameworks */,
+				1EF1BDAE1C6FFE2A00E134D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RoomtechKeyboard;
+			productName = RoomtechKeyboard;
+			productReference = 1EF1BDB01C6FFE2A00E134D6 /* RoomtechKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		D5644DE11C68D26700DC9681 /* houzie */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D5644E0A1C68D26700DC9681 /* Build configuration list for PBXNativeTarget "houzie" */;
@@ -213,10 +286,12 @@
 				D5644DE01C68D26700DC9681 /* Resources */,
 				C96EE592A53CF824D3BB05CB /* Embed Pods Frameworks */,
 				7D6EF928D4A7A64BF1CD4C92 /* Copy Pods Resources */,
+				1EF1BDBB1C6FFE2A00E134D6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1EF1BDB61C6FFE2A00E134D6 /* PBXTargetDependency */,
 			);
 			name = houzie;
 			productName = houzie;
@@ -274,6 +349,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = roomtech;
 				TargetAttributes = {
+					1EF1BDAF1C6FFE2A00E134D6 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
 					D5644DE11C68D26700DC9681 = {
 						CreatedOnToolsVersion = 7.2.1;
 					};
@@ -303,21 +381,27 @@
 				D5644DE11C68D26700DC9681 /* houzie */,
 				D5644DF51C68D26700DC9681 /* houzieTests */,
 				D5644E001C68D26700DC9681 /* houzieUITests */,
+				1EF1BDAF1C6FFE2A00E134D6 /* RoomtechKeyboard */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1EF1BDAE1C6FFE2A00E134D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5644DE01C68D26700DC9681 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5644DF01C68D26700DC9681 /* LaunchScreen.storyboard in Resources */,
-				1EF1BD961C6F3B6D00E134D6 /* avatar.png in Resources */,
+				1EF1BDAA1C6F6D5A00E134D6 /* avatar.png in Resources */,
 				1E2814F81C6A09C700123E4E /* GoogleService-Info.plist in Resources */,
-				1EF1BD971C6F3B6D00E134D6 /* bot.png in Resources */,
-				D5644DED1C68D26700DC9681 /* Assets.xcassets in Resources */,
 				D5644DEB1C68D26700DC9681 /* Main.storyboard in Resources */,
+				1EF1BDAB1C6F6D5A00E134D6 /* bot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +545,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1EF1BDAC1C6FFE2A00E134D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EF1BDB31C6FFE2A00E134D6 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D5644DDE1C68D26700DC9681 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,6 +560,7 @@
 				D5644DE81C68D26700DC9681 /* LoginController.swift in Sources */,
 				D5644DE61C68D26700DC9681 /* AppDelegate.swift in Sources */,
 				1E2814FA1C6A39F000123E4E /* ChatController.swift in Sources */,
+				D52D5EC61C6F2C3D00FB2D23 /* Command.swift in Sources */,
 				D52D5EC31C6F191700FB2D23 /* HzManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5644DFB1C68D26700DC9681 /* houzieTests.swift in Sources */,
+				D52D5EC81C6F2D0500FB2D23 /* CommandTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +585,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1EF1BDB61C6FFE2A00E134D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EF1BDAF1C6FFE2A00E134D6 /* RoomtechKeyboard */;
+			targetProxy = 1EF1BDB51C6FFE2A00E134D6 /* PBXContainerItemProxy */;
+		};
 		D5644DF81C68D26700DC9681 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D5644DE11C68D26700DC9681 /* houzie */;
@@ -523,6 +622,28 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1EF1BDB91C6FFE2A00E134D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RoomtechKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.roomtech.houzie.RoomtechKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		1EF1BDBA1C6FFE2A00E134D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = RoomtechKeyboard/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.roomtech.houzie.RoomtechKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		D5644E081C68D26700DC9681 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -609,6 +730,7 @@
 			baseConfigurationReference = 80060192BBBA35A06621A4DB /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = houzie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roomtech.houzie;
@@ -622,6 +744,7 @@
 			baseConfigurationReference = 8AC6AC057784362F697EB00C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = houzie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.roomtech.houzie;
@@ -685,6 +808,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1EF1BDB81C6FFE2A00E134D6 /* Build configuration list for PBXNativeTarget "RoomtechKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EF1BDB91C6FFE2A00E134D6 /* Debug */,
+				1EF1BDBA1C6FFE2A00E134D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		D5644DDD1C68D26700DC9681 /* Build configuration list for PBXProject "houzie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
